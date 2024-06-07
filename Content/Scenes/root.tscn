@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://du8mynn01t7aj"]
+
+[ext_resource type="PackedScene" uid="uid://cmcbhxxqxlnjj" path="res://Content/Scenes/menu.tscn" id="1_1dvv8"]
+[ext_resource type="Script" path="res://Content/Scripts/Server.gd" id="1_nhsnj"]
+
+[node name="root" type="Node"]
+
+[node name="Server" type="Node" parent="."]
+script = ExtResource("1_nhsnj")
+
+[node name="Menu" parent="." instance=ExtResource("1_1dvv8")]
+
+[connection signal="UpdateScreen" from="Server" to="Menu" method="_update_screen"]

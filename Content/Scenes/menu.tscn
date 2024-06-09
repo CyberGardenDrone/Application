@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmcbhxxqxlnjj"]
+[gd_scene load_steps=2 format=3 uid="uid://cmcbhxxqxlnjj"]
 
 [ext_resource type="Script" path="res://Content/Scripts/menu.gd" id="1_yhqol"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1jdlu"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,11 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yhqol")
-
-[node name="Screen" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(18, 10.125)
-texture = SubResource("GradientTexture2D_1jdlu")
 
 [node name="Connect panel" type="Control" parent="."]
 layout_mode = 1

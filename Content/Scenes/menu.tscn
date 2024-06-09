@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmcbhxxqxlnjj"]
+[gd_scene load_steps=5 format=3 uid="uid://cmcbhxxqxlnjj"]
 
 [ext_resource type="Script" path="res://Content/Scripts/menu.gd" id="1_yhqol"]
 [ext_resource type="Texture2D" uid="uid://cbq4dewvbwvo7" path="res://Content/Textures/Rectangle 2(6).png" id="2_gxtni"]
+[ext_resource type="Theme" uid="uid://cttqyp62eom6m" path="res://Content/Themes/MenuTheme.tres" id="2_h1sot"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufddx"]
 
@@ -37,6 +38,7 @@ offset_left = -202.0
 offset_right = 202.003
 offset_bottom = 154.0
 grow_horizontal = 2
+theme = ExtResource("2_h1sot")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ufddx")
 icon = ExtResource("2_gxtni")
 icon_alignment = 1

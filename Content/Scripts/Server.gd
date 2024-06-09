@@ -1,6 +1,7 @@
 extends Node
 
 signal LostConnection
+signal OutString(string : String)
 
 #Настройки клиента из инспектора
 @export_category("Client settings")
@@ -34,9 +35,12 @@ func _http_request_completed(result, response_code, headers, body):
 	
 	if response != null:
 		for str in response:
-			print(str)
 			var st : String = str
-			#print(st.substr(0, 5))
+			st = st.replace("-", " ")
+			st = st.replace("<", " ")
+			st = st.replace(">", " ")
+		
+			OutString.emit(st)
 	else:
 		return null
 	

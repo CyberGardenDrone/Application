@@ -16,7 +16,7 @@ func _ready():
 	http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.request_completed.connect(self._http_request_completed)
-	var error = http_request.request(host + port + "/api/get")
+	var error = http_request.request(host + ":" + port + "/api/get")
 	if error != OK:
 		push_error("An error occurred in the HTTP request.")
 	else:

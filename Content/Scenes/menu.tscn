@@ -3,8 +3,7 @@
 [ext_resource type="Script" path="res://Content/Scripts/menu.gd" id="1_yhqol"]
 [ext_resource type="Texture2D" uid="uid://cbq4dewvbwvo7" path="res://Content/Textures/Rectangle 2(6).png" id="2_gxtni"]
 [ext_resource type="Theme" uid="uid://cttqyp62eom6m" path="res://Content/Themes/MenuTheme.tres" id="2_h1sot"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufddx"]
+[ext_resource type="StyleBox" uid="uid://byraflk760pws" path="res://Content/Themes/NormalBut.tres" id="3_tjfh0"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -25,11 +24,11 @@ anchor_bottom = 1.0
 offset_left = -600.0
 offset_top = -155.0
 offset_right = 600.0
-offset_bottom = 925.0
+offset_bottom = 1079.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ConsoleButton" type="Button" parent="ConsolePanel"]
+[node name="ConsoleButtonUP" type="Button" parent="ConsolePanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -39,7 +38,26 @@ offset_right = 202.003
 offset_bottom = 154.0
 grow_horizontal = 2
 theme = ExtResource("2_h1sot")
-theme_override_styles/normal = SubResource("StyleBoxTexture_ufddx")
+theme_override_styles/normal = ExtResource("3_tjfh0")
+icon = ExtResource("2_gxtni")
+icon_alignment = 1
+
+[node name="ConsoleButtonDOWN" type="Button" parent="ConsolePanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -202.001
+offset_top = -154.0
+offset_right = 202.001
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 3.14159
+pivot_offset = Vector2(202, 77)
+theme = ExtResource("2_h1sot")
+theme_override_styles/normal = ExtResource("3_tjfh0")
 icon = ExtResource("2_gxtni")
 icon_alignment = 1
 
@@ -53,4 +71,5 @@ offset_top = 464.0
 offset_right = 482.4
 offset_bottom = 383.04
 
-[connection signal="pressed" from="ConsolePanel/ConsoleButton" to="." method="_on_console_button_pressed"]
+[connection signal="pressed" from="ConsolePanel/ConsoleButtonUP" to="." method="_on_console_button_pressed"]
+[connection signal="pressed" from="ConsolePanel/ConsoleButtonDOWN" to="." method="_on_console_button_down_pressed"]

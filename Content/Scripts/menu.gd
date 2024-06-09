@@ -20,13 +20,15 @@ func _lost_connection():
 
 
 func _on_console_button_pressed():
-	if(!IsKonsoleUp):
-		MoveConsoleTween = get_tree().create_tween()
-		MoveConsoleTween.set_ease(Tween.EASE_IN_OUT)
-		MoveConsoleTween.tween_property($ConsolePanel,"position:y",0, 0.5)
-		IsKonsoleUp = true
-	else:
-		MoveConsoleTween = get_tree().create_tween()
-		MoveConsoleTween.set_ease(Tween.EASE_IN_OUT)
-		MoveConsoleTween.tween_property($ConsolePanel,"position:y",925, 0.5)
-		IsKonsoleUp = false
+	MoveConsoleTween = get_tree().create_tween()
+	MoveConsoleTween.set_ease(Tween.EASE_OUT)
+	MoveConsoleTween.tween_property($ConsolePanel,"position:y",-157, 0.5)
+	IsKonsoleUp = true
+		
+
+
+func _on_console_button_down_pressed():
+	MoveConsoleTween = get_tree().create_tween()
+	MoveConsoleTween.set_ease(Tween.EASE_IN)
+	MoveConsoleTween.tween_property($ConsolePanel,"position:y",925, 0.5)
+	IsKonsoleUp = false

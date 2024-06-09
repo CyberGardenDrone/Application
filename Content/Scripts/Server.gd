@@ -22,7 +22,7 @@ func _ready():
 		push_error("An error occurred in the HTTP request.")
 	else:
 		LostConnection.emit()
-	
+	OS.shell_open("http://10.42.0.1:7123/stream.mjpg")
 # Called every frame. 'delta' is the elapsed time since the previous frame.`
 func _process(delta):
 	pass
@@ -36,10 +36,11 @@ func _http_request_completed(result, response_code, headers, body):
 	if response != null:
 		for str in response:
 			var st : String = str
+			
 			st = st.replace("-", " ")
 			st = st.replace("<", " ")
 			st = st.replace(">", " ")
-		
+			
 			OutString.emit(st)
 	else:
 		return null

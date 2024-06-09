@@ -1,23 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmcbhxxqxlnjj"]
+[gd_scene load_steps=3 format=3 uid="uid://cmcbhxxqxlnjj"]
 
 [ext_resource type="Script" path="res://Content/Scripts/menu.gd" id="1_yhqol"]
-[ext_resource type="Texture2D" uid="uid://cbq4dewvbwvo7" path="res://Content/Textures/Rectangle 2(6).png" id="2_gxtni"]
-[ext_resource type="Theme" uid="uid://cttqyp62eom6m" path="res://Content/Themes/MenuTheme.tres" id="2_h1sot"]
-[ext_resource type="StyleBox" uid="uid://byraflk760pws" path="res://Content/Themes/NormalBut.tres" id="3_tjfh0"]
-[ext_resource type="StyleBox" uid="uid://2pigan5wmydy" path="res://Content/Themes/HoverBut.tres" id="4_04nke"]
-[ext_resource type="StyleBox" uid="uid://xe6ybof5cytx" path="res://Content/Themes/PressedBut.tres" id="5_p514o"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cehsb"]
-bg_color = Color(0.101961, 0.152941, 0.113725, 0.419608)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.986664, 0.987079, 0.984703, 1)
-corner_radius_top_left = 100
-corner_radius_top_right = 100
-corner_radius_bottom_right = 100
-corner_radius_bottom_left = 100
+[ext_resource type="FontFile" uid="uid://crn7plt5d63bv" path="res://Content/Fonts/UbuntuMono-Bold.ttf" id="2_4r8s1"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -28,91 +12,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yhqol")
 
-[node name="ConsolePanel" type="Control" parent="."]
+[node name="Konsole" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -600.0
-offset_top = -155.0
-offset_right = 600.0
-offset_bottom = 1079.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="SidePanel" type="Control" parent="ConsolePanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 190.0
-offset_bottom = -182.0
+anchors_preset = -1
+anchor_left = 0.205
+anchor_top = 0.02
+anchor_right = 0.812
+anchor_bottom = 0.856
+offset_left = -142.6
+offset_top = -2.6
+offset_right = 352.96
+offset_bottom = -2.47998
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="ConsolePanel/SidePanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_cehsb")
-
-[node name="Konsole" type="RichTextLabel" parent="ConsolePanel/SidePanel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 88.0
-offset_bottom = -89.0
-grow_horizontal = 2
-grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_4r8s1")
+theme_override_font_sizes/normal_font_size = 15
 scroll_following = true
 tab_size = 2
-
-[node name="ConsoleButtonUP" type="Button" parent="ConsolePanel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -202.0
-offset_right = 202.003
-offset_bottom = 154.0
-grow_horizontal = 2
-theme = ExtResource("2_h1sot")
-theme_override_styles/normal = ExtResource("3_tjfh0")
-theme_override_styles/hover = ExtResource("4_04nke")
-theme_override_styles/pressed = ExtResource("5_p514o")
-theme_override_styles/disabled = ExtResource("3_tjfh0")
-theme_override_styles/focus = ExtResource("5_p514o")
-icon = ExtResource("2_gxtni")
-icon_alignment = 1
-
-[node name="ConsoleButtonDOWN" type="Button" parent="ConsolePanel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -202.001
-offset_top = -154.0
-offset_right = 202.001
-grow_horizontal = 2
-grow_vertical = 0
-rotation = 3.14159
-pivot_offset = Vector2(202, 77)
-theme = ExtResource("2_h1sot")
-theme_override_styles/normal = ExtResource("3_tjfh0")
-theme_override_styles/hover = ExtResource("4_04nke")
-theme_override_styles/pressed = ExtResource("5_p514o")
-theme_override_styles/disabled = ExtResource("3_tjfh0")
-theme_override_styles/focus = ExtResource("5_p514o")
-icon = ExtResource("2_gxtni")
-icon_alignment = 1
-
-[connection signal="pressed" from="ConsolePanel/ConsoleButtonUP" to="." method="_on_console_button_pressed"]
-[connection signal="pressed" from="ConsolePanel/ConsoleButtonDOWN" to="." method="_on_console_button_down_pressed"]

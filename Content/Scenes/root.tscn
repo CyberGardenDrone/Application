@@ -10,4 +10,4 @@ script = ExtResource("1_nhsnj")
 
 [node name="Menu" parent="." instance=ExtResource("1_1dvv8")]
 
-[connection signal="UpdateScreen" from="Server" to="Menu" method="_update_screen"]
+[connection signal="LostConnection" from="Server" to="Menu" method="_lost_connection"]

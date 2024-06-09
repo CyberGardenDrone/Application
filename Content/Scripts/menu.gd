@@ -11,10 +11,5 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _update_screen(Sprite):
-	if Sprite != null:
-		ScreenViewer = Sprite
-		print("Что-то пришло")
-	else:
-		printerr("Что-то пошло не так")
+func _lost_connection():
+	print("Connection lost")

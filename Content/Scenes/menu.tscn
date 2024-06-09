@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmcbhxxqxlnjj"]
+[gd_scene load_steps=4 format=3 uid="uid://cmcbhxxqxlnjj"]
 
 [ext_resource type="Script" path="res://Content/Scripts/menu.gd" id="1_yhqol"]
-[ext_resource type="Theme" uid="uid://c6wda8j3vitgu" path="res://Content/Themes/Menu.tres" id="2_bx2ob"]
+[ext_resource type="Texture2D" uid="uid://cbq4dewvbwvo7" path="res://Content/Textures/Rectangle 2(6).png" id="2_gxtni"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ufddx"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,25 +14,41 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yhqol")
 
-[node name="Connect panel" type="Control" parent="."]
+[node name="ConsolePanel" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -100.0
-offset_right = 150.0
+offset_left = -600.0
+offset_top = -155.0
+offset_right = 600.0
+offset_bottom = 925.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Button" type="Button" parent="Connect panel"]
+[node name="ConsoleButton" type="Button" parent="ConsolePanel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -202.0
+offset_right = 202.003
+offset_bottom = 154.0
 grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_bx2ob")
-text = "Connect"
+theme_override_styles/normal = SubResource("StyleBoxTexture_ufddx")
+icon = ExtResource("2_gxtni")
+icon_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ConsolePanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.138
+anchor_bottom = 0.112
+offset_left = 608.0
+offset_top = 464.0
+offset_right = 482.4
+offset_bottom = 383.04
+
+[connection signal="pressed" from="ConsolePanel/ConsoleButton" to="." method="_on_console_button_pressed"]
